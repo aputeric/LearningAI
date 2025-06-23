@@ -80,3 +80,12 @@ interface CompanionComponentProps {
   voice: string;
   style: string;
 }
+
+interface AgentProps {
+  userName: string;
+  userId?: string;
+  quizId?: string;
+  feedbackId?: string;
+  type: "generate" | "quiz";
+  questions?: string[];
+}
