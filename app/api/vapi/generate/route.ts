@@ -17,6 +17,7 @@ export async function POST(request: Request) {
   const amount = parseInt(body.amount || "0");
 
   if (!difficulty || !subject || !topic || !userid || !amount || isNaN(amount)) {
+    console.error("❌ Missing or invalid input", { difficulty, subject, topic, userid, amount });
     return Response.json(
       { success: false, error: "Missing or invalid fields." },
       { status: 400 }
