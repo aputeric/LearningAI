@@ -66,12 +66,12 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
       vapi.off("error", onError);
     };
   }, []);
-
+//effects
   useEffect(() => {
     if (messages.length > 0) {
       setLastMessage(messages[messages.length - 1].content);
     } 
-    
+
     if (callStatus === CallStatus.FINISHED) {
       if (type === "generate") {
         router.push("/quiz");
