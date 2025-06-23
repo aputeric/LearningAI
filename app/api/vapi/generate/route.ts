@@ -7,8 +7,9 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  console.log("✅ /api/vapi/generate route hit");
   const body = await request.json();
-
+ console.log("🧾 Body received:", body);
   const difficulty = String(body.difficulty || "");
   const subject = String(body.subject || "");
   const topic = String(body.topic || "");
