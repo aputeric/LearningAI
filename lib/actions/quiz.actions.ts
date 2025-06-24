@@ -40,7 +40,7 @@ export const getAllQuizzes = async (userId: string) => {
   const { data, error } = await supabase
     .from("quiz")
     .select("*")
-    .eq("user_id", userId)
+    .eq("userid", userId)
     .order("created_at", { ascending: false });
 
   if (error) {

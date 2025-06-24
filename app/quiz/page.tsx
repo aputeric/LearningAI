@@ -5,11 +5,16 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
+import { getAllQuizzes } from "@/lib/actions/quiz.actions";
+import {getSubjectColor} from "@/lib/utils";
 
 const QuizLibrary = async () => {
   const user = await currentUser();
 
   if (!user) redirect("/sign-in");
+
+  const quizzes = await getAllQuizzes(user?.id);
+
   return (
     <main>
       <section className="flex flex-row rounded-3xl px-16 py-6 items-center justify-between max-sm:px-4">
@@ -39,13 +44,13 @@ const QuizLibrary = async () => {
       </section>
 
       <section className="companions-grid">
-        <QuizCard
-          quizId="123"
-          difficulty="hard"
-          topic="new topic"
-          subject="maths"
-          color="ffda6e"
-        />
+        {quizzes.map((quiz) => (
+                    <QuizCard
+                        key={quiz.id}
+                        {...quiz}
+                        color={getSubjectColor(quiz.subject)}
+                    />
+                ))}
       </section>
     </main>
   );
