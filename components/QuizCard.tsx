@@ -41,6 +41,7 @@ const QuizCard = ({
       </div>
 
       <p className="text-sm">{topic}</p>
+      <p className="text-sm">{quizId}</p>
 
       {/*Score */}
       <div className="flex flex-row gap-5 mt-3">
