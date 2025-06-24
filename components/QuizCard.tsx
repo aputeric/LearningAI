@@ -17,10 +17,10 @@ const QuizCard = ({
   color,
 }: QuizCardProps) => {
   /*const feedback =
-    userId && quizId
+    userid && id
       ? await getFeedbackByInterviewId({
-          interviewId,
-          userId,
+          id,
+          userid,
         })
       : null; */
 
@@ -41,7 +41,6 @@ const QuizCard = ({
       </div>
 
       <p className="text-sm">{topic}</p>
-      <p className="text-sm">{id}</p>
 
       {/*Score */}
       <div className="flex flex-row gap-5 mt-3">
