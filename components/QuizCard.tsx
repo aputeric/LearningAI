@@ -3,14 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface QuizCardProps {
-  quizId: string;
+  id: string;
   difficulty: string;
   topic: string;
   subject: string;
   color: string;
 }
 const QuizCard = ({
-  quizId,
+  id,
   difficulty,
   topic,
   subject,
@@ -41,7 +41,7 @@ const QuizCard = ({
       </div>
 
       <p className="text-sm">{topic}</p>
-      <p className="text-sm">{quizId}</p>
+      <p className="text-sm">{id}</p>
 
       {/*Score */}
       <div className="flex flex-row gap-5 mt-3">
@@ -52,7 +52,7 @@ const QuizCard = ({
         </div>
       </div>
 
-      <Link href={`/quiz/${quizId}`} className="w-full">
+      <Link href={`/quiz/${id}`} className="w-full">
         <button className="btn-primary w-full justify-center">
           Launch Quiz
         </button>
