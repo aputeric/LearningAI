@@ -185,7 +185,7 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
                                }
                            </button> */}
           {callStatus !== "ACTIVE" ? (
-            <button className="rounded-lg py-2 cursor-pointer transition-colors w-full text-white" onClick={() => handleCall()}>
+            <button className="btn-primary" onClick={() => handleCall()}>
               <span
                 className={cn(
                   "absolute animate-ping rounded-full opacity-75",

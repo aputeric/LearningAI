@@ -31,7 +31,7 @@ const QuizSession = async ({ params }: CompanionSessionPageProps) => {
   }); */
 
   return (
-    <>
+    <main>
       <article className="flex rounded-border justify-between p-6 max-md:flex-col">
                       <div className="flex items-center gap-2">
                           <div className="size-[72px] flex items-center justify-center rounded-lg max-md:hidden" style={{ backgroundColor: getSubjectColor(quiz.subject)}}>
@@ -56,7 +56,7 @@ const QuizSession = async ({ params }: CompanionSessionPageProps) => {
         quizId={id}
         questions={quiz.questions}
       />
-    </>
+    </main>
   );
 };
 
