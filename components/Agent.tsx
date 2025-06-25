@@ -84,18 +84,7 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
   const handleCall = async () => {
     setCallStatus(CallStatus.CONNECTING);
 
-     /*  await vapi.start(
-        undefined,
-        undefined,
-        undefined,
-        process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!,
-        {
-          variableValues: {
-            username: userName,
-            userid: userId,
-          },
-        }
-      ); */
+     
 
       if (type === "generate") {
       await vapi.start(
@@ -196,7 +185,7 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
                                }
                            </button> */}
           {callStatus !== "ACTIVE" ? (
-            <button className="relative btn-call" onClick={() => handleCall()}>
+            <button className="rounded-lg py-2 cursor-pointer transition-colors w-full text-white" onClick={() => handleCall()}>
               <span
                 className={cn(
                   "absolute animate-ping rounded-full opacity-75",
