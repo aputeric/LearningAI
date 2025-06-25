@@ -148,7 +148,7 @@ const Agent = ({ userName, userId, type, questions }: AgentProps) => {
           <div className="flex flex-col items-center justify-center gap-4 flex-1 rounded-2xl border border-primary-200/50 bg-white shadow-md p-6 sm:p-8">
             <div className="relative flex items-center justify-center size-28 sm:size-32 rounded-full bg-gray-100">
               <Image
-                src="/images/user-avatar.png"
+                src="/images/ai-avatar.png"
                 alt="User"
                 width={80}
                 height={80}
